@@ -7,12 +7,14 @@
   padding: 7px;
 }
 
+
 .tab-widget.active{
   border: 1px solid #dcdcdc;
   border-radius: 5px;
-  border-bottom-color: #f7f7f7;
+  border-bottom-color: #b5b5b5;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  background: #b5b5b5;
 }
 
 #tab-0{
@@ -30,4 +32,5 @@
 .tab-content{
   border: 1px solid #dcdcdc;
   border-radius: 5px;
+  background: #B5B5B5;
 }

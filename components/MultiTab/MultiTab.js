@@ -1,4 +1,4 @@
-
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import React, { Component, PropTypes } from 'react';
 import './MultiTab.scss';
 
@@ -25,7 +25,7 @@ class MultiTab extends Component {
         <div className="tab-widgets">
         {
           this.props.tabs.map(function (item, i) {
-            let isTabActive = item.active ? ' active' : '';
+            let isTabActive = item.active ? 'active' : '';
             return (
               <Tab handleTabClick={this.handleTabClick.bind(this, item, i)} isTabActive={(isTabActive)} itemProperties={item} itemIndex={i}/>
               );
@@ -43,8 +43,7 @@ class MultiTab extends Component {
 class Tab extends Component{
   render(){
     return(
-      
-      <div id={"tab-" + this.props.itemIndex} className={"tab-widget " + this.props.itemProperties.title + this.props.isTabActive }>
+      <div id={"tab-" + this.props.itemIndex} className={"tab-widget " + this.props.isTabActive }>
         <h2><a onClick={this.props.handleTabClick}>{this.props.itemProperties.title}</a></h2>
       </div>
     );
