@@ -12,7 +12,8 @@ export default class extends Component {
     return (
       <div>
         <h1>About Us</h1>
-        <p>Coming soon.</p>
+        <p>Welcome to my React Proof-of-Concepts page</p>
+        <p>You can find all the React Goodness here</p>
       </div>
     );
   }

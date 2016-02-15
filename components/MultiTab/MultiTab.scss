@@ -1,0 +1,33 @@
+.multitab-section{
+  text-align: center;
+}
+
+.tab-widget{
+  display: inline-block;
+  padding: 7px;
+}
+
+.tab-widget.active{
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  border-bottom-color: #f7f7f7;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#tab-0{
+  color: red;
+}
+
+#tab-1{
+  color: blue;
+}
+
+#tab-2{
+  color: green;
+}
+
+.tab-content{
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+}
