@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MultiTab from './../components/MultiTab/MultiTab';
 import Dropdown from './../components/Dropdown/Dropdown';
+import Button from './../components/Button/Button';
 
 export default class extends Component {
 
@@ -98,6 +99,8 @@ export default class extends Component {
             </div>
           </div>
         </div>
+        <h2>Buttons</h2>
+        <Button />
       </div>
     );
   }
