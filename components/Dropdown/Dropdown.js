@@ -30,11 +30,13 @@ class Dropdown extends Component{
 			    <Icon icon_prefix={this.props.icon_prefix} icon_name={this.props.icon_name} icon_size={this.props.icon_size} />
 			  </button>
 			  <ul className={"dropdown-menu" + " " + hideShowDropdown}>
+			    <li className="dropdown-header">Header</li>
 			    <li><a href="#">Action</a></li>
 			    <li><a href="#">Another action</a></li>
 			    <li><a href="#">Something else here</a></li>
 			    <li role="separator" className="divider"></li>
 			    <li><a href="#">Separated link</a></li>
+			    <li className="disabled"><a href="#">Disabled link</a></li>
 			  </ul>
 			</div>
 	    );
