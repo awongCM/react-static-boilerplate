@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MultiTab from './../components/MultiTab/MultiTab';
+import Dropdown from './../components/Dropdown/Dropdown';
 
 export default class extends Component {
 
@@ -78,7 +79,25 @@ export default class extends Component {
     return (
       <div>
         <h1>Proof of Concepts </h1>
+        <h2>Multi Tabs</h2>
         <MultiTab tabs={this.state.tabs} swapTabContent={this.swapTabContent}/>
+        <h2>Dropdowns</h2>
+        <div className="table">
+          <div className="table-row">
+            <div className="table-cell">
+              <Dropdown icon_prefix="fa" icon_name="fa-caret-down" icon_size="fa-1" />
+            </div>
+            <div className="table-cell">
+              <Dropdown icon_prefix="fa" icon_name="fa-caret-up" icon_size="fa-1" />
+            </div>
+            <div className="table-cell">
+              <Dropdown icon_prefix="fa" icon_name="fa-caret-left" icon_size="fa-1" />
+            </div>
+            <div className="table-cell">
+              <Dropdown icon_prefix="fa" icon_name="fa-caret-right" icon_size="fa-1" />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
