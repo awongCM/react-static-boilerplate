@@ -6,6 +6,7 @@ class MultiTab extends Component {
 
   constructor(){
     super();
+    this.handleTabClick = this.handleTabClick.bind(this);
   }
 
   handleTabClick(item, index) {
@@ -15,8 +16,7 @@ class MultiTab extends Component {
        return tab; 
     }) 
 
-    this.props.swapTabContent(tabs);
-
+    this.setState({tabs: tabs});
   }
 
   render() {
@@ -24,6 +24,7 @@ class MultiTab extends Component {
       <div className="multitab-section">
         <div className="tab-widgets">
         {
+          //still puzzles me why with the extra bind inside and outside map iteration
           this.props.tabs.map(function (item, i) {
             let isTabActive = item.active ? 'active' : '';
             return (
@@ -32,19 +33,28 @@ class MultiTab extends Component {
             }.bind(this))
         }
         </div>
-
         <TabContent selectedTabContent={this.props.tabs}/>
-
       </div>
     );
   }
 }
 
 class Tab extends Component{
+  
+  constructor(){
+    super();
+
+    this.handleTabClick = this.handleTabClick.bind(this);
+  }
+
+  handleTabClick(){
+    this.props.handleTabClick();
+  }
+
   render(){
     return(
       <div id={"tab-" + this.props.itemIndex} className={"tab-widget " + this.props.isTabActive }>
-        <h2><a onClick={this.props.handleTabClick}>{this.props.itemProperties.title}</a></h2>
+        <h2><a onClick={this.handleTabClick}>{this.props.itemProperties.title}</a></h2>
       </div>
     );
   }
@@ -53,7 +63,7 @@ class Tab extends Component{
 class TabContent extends Component{
   render(){
     
-    let tabData = this.props.selectedTabContent.filter(function (item) {
+    let tabData = this.props.selectedTabContent.filter( item => {
       return item.active === true;
     });
 
@@ -74,3 +84,63 @@ class TabContent extends Component{
 }
 
 export default MultiTab;
+
+MultiTab.defaultProps = {
+  tabs : [
+      {
+          title: 'Tab Page 1',
+          active: true,
+          data: [
+            {
+              meta_data: 'tab_meta_f1',
+              description: 'This is my fun tabbed text 1'
+            },
+            {
+              meta_data: 'tab_meta_f2',
+              description: 'This is my fun tabbed text 2'
+            },
+            {
+              meta_data: 'tab_meta_f3',
+              description: 'This is my fun tabbed text 3'
+            }
+          ]
+      },
+      {
+          title: 'Tab Page 2',
+          active: false,
+          data: [
+            {
+              meta_data: 'tab_meta_b1',
+              description: 'So is this fun tabbed text 1' 
+            },
+            {
+              meta_data: 'tab_meta_b2',
+              description: 'So is this fun tabbed text 2'
+            },
+            {
+              meta_data: 'tab_meta_b3',
+              description: 'So is this fun tabbed text 3'
+            }
+          ]
+
+      },
+      {
+          title: 'Tab Page 3',
+          active: false,
+          data: [
+            {
+              meta_data: 'tab_meta_fb1',
+              description: 'Same goes for this one 1'
+            },
+            {
+              meta_data: 'tab_meta_fb2',
+              description: 'Same goes for this one 2'
+            },
+            {
+              meta_data: 'tab_meta_fb3',
+              description: 'Same goes for this one 3'
+            }
+          ]
+      }
+    ]
+};
