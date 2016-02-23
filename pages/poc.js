@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MultiTab from './../components/MultiTab/MultiTab';
 import Dropdown from './../components/Dropdown/Dropdown';
 import Button from './../components/Button/Button';
+import ButtonGroup from './../components/ButtonGroup/ButtonGroup';
 
 export default class extends Component {
 
@@ -101,6 +102,8 @@ export default class extends Component {
         </div>
         <h2>Buttons</h2>
         <Button />
+        <h2>Button Groups</h2>
+        <ButtonGroup no_of_buttons={6} />
       </div>
     );
   }
