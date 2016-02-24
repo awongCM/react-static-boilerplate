@@ -25,10 +25,10 @@ class MultiTab extends Component {
         <div className="tab-widgets">
         {
           //still puzzles me why with the extra bind inside and outside map iteration
-          this.props.tabs.map(function (item, i) {
+          this.props.tabs.map(function (item, index) {
             let isTabActive = item.active ? 'active' : '';
             return (
-              <Tab handleTabClick={this.handleTabClick.bind(this, item, i)} isTabActive={(isTabActive)} itemProperties={item} itemIndex={i}/>
+              <Tab handleTabClick={this.handleTabClick.bind(this, item, index)} isTabActive={(isTabActive)} itemProperties={item} key={index} itemIndex={index}/>
               );
             }.bind(this))
         }
