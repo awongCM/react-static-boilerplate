@@ -36,7 +36,7 @@ export default class extends Component {
         <h2>Buttons</h2>
         <Button />
         <h2>Button Groups</h2>
-        <ButtonGroup no_of_buttons={6} />
+        <ButtonGroup />
       </div>
     );
   }

@@ -25,3 +25,17 @@
   background-color: #fff;
   border-color: #ccc;
 }
+
+.btn-middle{
+  border-radius: 0px; 
+}
+
+.btn-first{
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.btn-last{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
